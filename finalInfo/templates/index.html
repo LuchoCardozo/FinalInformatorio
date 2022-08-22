@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+
+
+<main>
+  <article id="home" class="home">
+    <h1 class="Title">Nosotros</h1>
+    
+    <div class="information">
+        <div class="information-img">
+          <img src="{% static '/img/logo.jpg' %}" alt="logo" />
+        </div>
+        <div class="information-text">
+          <h1 class="sub-title">FUNDACIÓN MEMORIAS DE NUESTRO PUEBLO</h1>
+          <p class="MisionAndVision">
+            Desarrollamos actividades culturales y educativas. Propiciamos
+            acciones con el fin de conservar el Patrimonio cultural inmaterial
+            y material como el arquitectónico y todo acervo relativo al
+            patrimonio cultural y natural de Fontana, Chaco.
+          </p>
+        </div>
+      </div>
+      <div class="staff">
+        <h1 class="Title">Equipo a cargo</h1>
+        <div class="staff-grid">
+          <div class="Card">
+            <div class="card-img">
+              <img src="{% static '/img/viejito-modified.png' %}" alt="viejo">
+            </div>
+            <h3>Raul canelope</h3>
+          </div>
+          <div class="Card">
+            <div class="card-img">
+              <img src="{% static '/img/viejito-modified.png' %}" alt="viejo">
+            </div>
+            <h3>Raul canelope</h3>
+          </div>
+          <div class="Card">
+            <div class="card-img">
+              <img src="{% static '/img/viejito-modified.png' %}" alt="viejo">
+            </div>
+            <h3>Raul canelope</h3>
+          </div>
+          <div class="Card">
+            <div class="card-img">
+              <img src="{% static '/img/viejito-modified.png' %}" alt="viejo">
+            </div>
+            <h3>Raul canelope</h3>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article id="Contacto" class="Contact">
+      <section>
+        <h1 class="Title">Contactanos</h1>
+        <form class="form-contact">
+          <input type="text" placeholder="Nombre" />
+          <input type="text" placeholder="Apellido" />
+          <input type="text" placeholder="Correo" />
+          <textarea placeholder="Escribe motivo de contacto"></textarea>
+          <button>Enviar</button>
+        </form>
+      </section>
+    </article>
+    <article class="donaciones" id="donaciones">
+      <h1 class="Title">Ayudanos a ayudar!</h1>
+      <section>
+        <div class="donate">
+          <img src="{% static '/img/logo.jpg' %}" alt="" />
+        </div>
+      </section>
+    </article>
+  </main>
+
+
+{% endblock %}
+ 

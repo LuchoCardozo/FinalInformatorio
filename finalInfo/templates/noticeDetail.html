@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+
+    <main>
+        <article class="Notice">
+
+                <h1 class="Title">{{ noticia.titulo }}</h1>
+                      
+            <div> 
+                <h6 >Creado: {{  noticia.creado  }}</h6>
+                <h6 >Autor: {{  noticia.autor }}</h6>
+                
+            </div>
+                <div class="notice-card">
+
+                    <div class="notice-text">
+                        <p> {{ noticia.contenido }}</p>
+                    </div>
+                    <div class="Card-Events-img">
+                        <img src="{{MEDIA_URL}}/{{noticia.img}}" alt="{{ noticia.titulo }}">
+                    </div>
+                </div>
+
+            {% for comentario in comentarios %}
+
+            <div>
+                <p><span>{{ comentario.autor}} {{ comentario.creado}}</span></p>
+                <p>{{ comentario.cuerpo_comentario}}</p>
+            </div>
+            
+            {% endfor %}
+            
+        </artic>
+    </main>
+
+{% endblock %}
+

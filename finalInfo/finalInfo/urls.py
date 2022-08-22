@@ -16,9 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from apps.noticias_app import views
+from django.conf.urls.static import static
+from django.conf import settings
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index')
+    path('', views.index, name='index'),
+    path('noticias', views.notices, name='notices'),
+    path('noticias/<int:id>', views.noticeDetail, name='noticeDetail'),
 
-]
+]+ static (settings.MEDIA_URL, document_root = settings.MEDIA_ROOT, show_indexes = True ) + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT, show_indexes = True ) 

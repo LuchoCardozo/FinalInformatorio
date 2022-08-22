@@ -23,7 +23,7 @@ class Noticia(models.Model):
     def comentariosAprobados(self):
         return self.comentarios.filter(aprobado=True)
 
-class Comentarios(models.Model):
+class Comentario(models.Model):
     noticia = models.ForeignKey('Noticia',related_name='comentarios', on_delete=models.CASCADE)
     autor =  models.ForeignKey('auth.User', on_delete=models.CASCADE)
     cuerpo_comentario = models.TextField()

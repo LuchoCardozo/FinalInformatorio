@@ -1,0 +1,370 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&display=swap");
+* {
+  font-family: "Nunito", sans-serif;
+  font-size: 19px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  list-style: none;
+  transition: all 1s;
+}
+
+/* FOR INDEX */
+
+.home {
+  padding: 0 5rem;
+}
+
+
+article {
+  margin: 4rem 0;
+}
+
+:root {
+  --color-darkBlue: #11151C;
+  --colors-brown: #c2541e;
+  --colors-brown-dark: #752c03;
+  --form-button: #88abc2;
+  --colors-green: #bac776;
+  --form-background: #d0e0eb;
+  --colors-green-dark: #407563;
+  --form-button-hover: #49708a;
+  --colors-gray: #85868a;
+}
+
+header {
+  align-items: center;
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  height: 80px;
+  padding: 0 6%;
+  background-color: var(--colors-green-dark);
+}
+
+.Title {
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.btn-menu {
+  display: none;
+}
+
+.logo,
+.logo img {
+  padding: 0.1rem 1% 0.1rem 0;
+  height: 100%;
+  width: auto;
+}
+
+.nav-search {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-link {
+  /* text-transform: lowercase; */
+  color: white;
+  padding: 0 0.5rem;
+}
+
+.nav-link:hover {
+  color: var(--colors-green);
+  border-bottom: 2px solid var(--colors-green);
+}
+
+main {
+  width: 1300px;
+  margin: auto;
+  margin-top: 80px;
+}
+
+.information {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.staff-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Card {
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 12rem;
+  margin: 0.5rem 1rem;
+  height: auto;
+}
+
+.card-img {
+  width: 100%;
+  height: auto;
+}
+.card-img img {
+  height: auto;
+  width: 100%;
+}
+
+.panel-register,
+.form-contact {
+  margin: auto;
+  padding: 1rem;
+  background-color: var(--form-background);
+  width: 60%;
+  border-radius: 0.2rem;
+}
+
+.panel-register > input,
+.panel-register > button,
+.form-contact > button,
+.form-contact > textarea,
+.form-contact > input {
+  border-radius: 0.2rem;
+  display: block;
+  margin: 1rem auto;
+  width: 100%;
+  padding: 0.2rem;
+}
+
+button {
+  background-color: var(--form-button);
+  color: white;
+  font-weight: 700;
+}
+
+button:hover {
+  background-color: var(--form-button-hover);
+}
+
+.btn {
+  cursor: pointer;
+  background-color: var(--form-background);
+  padding: 0.4rem 1.5rem;
+  color: var(--form-button);
+}
+
+.buttonDonate {
+  justify-content: space-around;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+footer {
+  bottom: 0;
+  color: white;
+  padding: 1rem .5rem 1rem;
+  background-color: var(--colors-brown-dark);
+  margin-top: 3rem;
+}
+.donate {
+  text-align: center;
+}
+
+/* FOR NOTICES AND EVENTS */
+.Notice,
+.events {
+  width: 100%;
+  min-height: 70vh;
+  display: block;
+}
+
+.Card-Events {
+    justify-content: space-around;
+  margin: 1rem;
+  width: 100%;
+  box-shadow: 1px 1px 34px 4px #e1e1e1;
+  display: flex;
+  height: 11rem;
+}
+
+.Card-Events-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 1rem 1rem;
+}
+
+.Card-Events-img img {
+  height: 11rem;
+  width: 17.03rem;
+}
+
+.subTitle{
+    font-size: 23px;
+}
+
+.navblock{
+  display: flex;
+}
+footer p{
+  padding: .5rem;
+  color: white;
+}
+
+.login-panel{
+
+  padding: 4rem 0;
+}
+
+/* FOR NOTICE AND EVENT (PAGE INDIVIDUALS) */
+@media screen and (max-width: 1300px) {
+  .information-img img {
+    width: 100%;
+    height: auto;
+  }
+
+  * {
+    font-size: 18px;
+  }
+
+  main {
+    width: 1200px;
+  }
+  .logo {
+    height: 4rem;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  main {
+    width: 1000px;
+    margin-top: 80px;
+  }
+  .card-img{
+    height: 5rem;
+    width: 5rem;
+    margin: 0 .5rem;
+  }
+  .information-text,
+  .information-img {
+    padding: 0 0.2rem;
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+    
+  header {
+    width: 100%;
+    height: 60px;
+    justify-content: space-between;
+  }
+  .form-contact {
+    width: 70%;
+  }
+  main {
+    width: 95%;
+  }
+  .information {
+    flex-direction: column;
+  }
+  .information-text {
+    width: 100%;
+  }
+  .btn-menu {
+    color: white;
+    display: block;
+  }
+
+  .nav-search {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    justify-content: center;
+    width: 50%;
+    right: 0;
+    top: 60px;
+    background-color: #36494E;
+    padding: 1rem 0;
+    text-align: center;
+  }
+  .nav-link {
+    padding: 0.5rem 0;
+    width: 100%;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  * {
+    font-size: 16px;
+  }
+  .home {
+    margin: auto;
+    padding: 0;
+    width: 100%;
+  }
+
+  .information-text {
+    text-align: center;
+  }
+
+  .btn {
+    margin-top: 1rem;
+    width: 60%;
+    margin: 1rem auto;
+  }
+
+  .donate {
+    width: 100%;
+  }
+
+  .donate img {
+    width: 90%;
+    height: auto;
+  }
+
+  .form-contact {
+    width: 90%;
+  }
+
+  .nav-footer .nav-link{
+    display: inline;
+    padding: 1rem .5rem;
+
+  }
+  .information-img {
+    width: 100%;
+    height: auto;
+  }
+
+  main {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  .grid{
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .Card-Events-img{
+    padding: .5rem 0;
+  }
+
+  .Card-Events{
+    border-radius: .5rem;
+    width: auto;
+    height: 100%;
+    flex-direction: column;
+  }
+
+  .Events-text{
+    display: none;
+  }
+}
