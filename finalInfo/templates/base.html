@@ -19,12 +19,13 @@
         <nav class="nav-search">
           <ul>
             <a href="/noticias" class="nav-link">Noticias</a>
+            <a href="/eventos" class="nav-link">Eventos</a>
             <a href="/nosotros" class="nav-link">Nosotros</a>
             <a href="/contacto" class="nav-link">Contacto</a>
-            <a href="/eventos" class="nav-link">Eventos</a>
           </ul>
           {% if user.is_authenticated %}
           <ul>
+            <a href="#" class="nav-link">{{user.username}}</a>
             <a href="/logout" class="nav-link">Cerrar sesion</a>
           </ul>
           {% else %}

@@ -3,8 +3,6 @@ from .models import Evento
 from django.http.response import Http404
 
 
-
-
 def eventos(request):
     lista_evento = Evento.objects.all().order_by('creado')
     context = {

@@ -1,14 +1,24 @@
 from urllib import request
 from django.views.decorators.csrf import csrf_protect
 from django.shortcuts import render, redirect
-from .models import Noticia, Comentario
+from .models import Noticia, Comentario 
+from apps.eventos_app.models import Evento
+from django.contrib.auth.models import User
 from django.http.response import Http404
 from .forms import FormComment
 from django.contrib.auth.decorators import login_required
 
 
 def index(request):
-    return render(request, 'index.html')
+    lista_noticias = Noticia.objects.all().order_by('creado')[:3]
+    lista_eventos = Evento.objects.all().order_by('creado')[:3]
+    lista_user = User.objects.all()
+    context = {
+        "noticias": lista_noticias,
+        "eventos": lista_eventos,
+        "Usuarios": lista_user
+    }
+    return render(request, 'index.html', context)
 
 
 def nosotros(request):
