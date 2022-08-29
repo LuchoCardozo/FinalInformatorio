@@ -3,43 +3,29 @@
 {% load static %}
 
 {% block contenido %}
-
-
-<main>
-<article class="events">
-    <h1 class="Title">Noticias</h1>
-    <section class="grid">
-       
-       {% for noticia  in noticias  %}
-       
-        <div class="Card-Events">
-
-
-
-            <div class="Card-Events-img">
-                <img src="{{MEDIA_URL}}/{{ noticia.img }}" alt="">
-            </div>
-            <div class="Card-Events-text">
-                <h3 class="subTitle">{{  noticia.titulo  }}</h3>
-                <p class="Events-text">
-                    {{  noticia.contenido|slice:":200"   }}
-                </p>
-
-                
-            <div> 
-                <h6 >Creado: {{  noticia.creado  }}</h6>
-                <h6 >Autor: {{  noticia.autor }}</h6>
-                
-            </div>
-                <a href="/noticias/{{ noticia.id }}" class="Event-link">
-                    Leer Más...
-                </a>
-            </div>
-        </div>
-        {% endfor %}
-    </section>
-</article>
-      </main>
-
- {% endblock %}
- 
+<section>
+  <h1 class="Titulo">noticias</h1>
+  {% for noticia  in noticia  %}
+  <article class="LayoutGenerico">
+    <div class="CartaGenerico">
+      <div class="CartaGenerico-img">
+        <img src="{{MEDIA_URL}}/{{ noticia.img }}" alt="">
+      </div>
+      <div class="CartaGenerico-text">
+        <h3 class="subTitle">{{noticia.titulo}}</h3>
+        <p class="Events-text">
+          {{noticia.contenido}}
+        </p>
+        <div>
+          <h6>Creado: {{ noticia.creado }}</h6>
+          <h6>Autor: {{ noticia.autor }}</h6>
+      </div>
+        <a href="/noticia/{{ noticia.id }}" class="Event-link">
+          Leer Más...
+        </a>
+      </div>
+    </div>
+    {% endfor %}
+  </article>
+</section>
+{% endblock %}

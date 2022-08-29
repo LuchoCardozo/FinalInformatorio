@@ -23,20 +23,27 @@
             <a href="/contacto" class="nav-link">Contacto</a>
             <a href="/eventos" class="nav-link">Eventos</a>
           </ul>
+          {% if user.is_authenticated %}
+          <ul>
+            <a href="/logout" class="nav-link">Cerrar sesion</a>
+          </ul>
+          {% else %}
           <ul>
             <a href="/login" class="nav-link">Login</a>
             <a href="/registro" class="nav-link">Registro</a>
           </ul>
+          
+          {% endif %}
         </nav>
         <div class="btn-menu">
           <i class="fa-solid fa-bars"></i>
         </div>
       </header>
-    
-{% block contenido %}
-
-{% endblock %}
-
+      <main>
+        {% block contenido %}
+        
+        {% endblock %}
+      </main>
       <footer>
         <nav class="nav-footer">
           <ul>
@@ -45,15 +52,15 @@
               </i>
                 Facebook
             </a>
-            <a href="#home" class="nav-link">
+            <a href="" class="nav-link">
               <i class="fa-solid fa-envelope">
               </i>
-                Correo
+              fundacionmemorias@gmail.com
             </a>
-            <a href="#Contacto" class="nav-link">
-              <i class="fa-brands fa-instagram">
+            <a href="https://api.whatsapp.com/send?phone=5493624395069" class="nav-link">
+              <i class="fa-brands fa-whatsapp">
               </i>
-                Instagram
+              whatsapp
             </a>
           </ul>
         </nav>

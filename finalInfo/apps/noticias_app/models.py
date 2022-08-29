@@ -1,10 +1,15 @@
 from datetime import datetime
 from django.db import models
+from django.urls import reverse
 from django.utils import timezone
-
+from django.contrib.contenttypes.models import ContentType
+from django.conf import settings
 # Create your models here.
+
+
 class Categoria(models.Model):
     nombre = models.CharField(max_length=100)
+
 
 class Noticia(models.Model):
     autor = models.ForeignKey('auth.User', on_delete=models.CASCADE)
@@ -23,9 +28,11 @@ class Noticia(models.Model):
     def comentariosAprobados(self):
         return self.comentarios.filter(aprobado=True)
 
+
 class Comentario(models.Model):
-    noticia = models.ForeignKey('Noticia',related_name='comentarios', on_delete=models.CASCADE)
-    autor =  models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    noticia = models.ForeignKey(
+        'Noticia', related_name='comentarios', on_delete=models.CASCADE)
+    autor = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     cuerpo_comentario = models.TextField()
     creado = models.DateTimeField(default=timezone.now)
     aprobado = models.BooleanField(default=False)
@@ -34,4 +41,4 @@ class Comentario(models.Model):
         self.aprobado = True
         self.save()
 
-    
+

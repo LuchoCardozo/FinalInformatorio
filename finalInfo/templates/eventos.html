@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+<section>
+  <h1 class="Titulo">Eventos</h1>
+  {% for evento  in evento  %}
+
+  <article class="LayoutGenerico">
+    <div class="CartaGenerico">
+      <div class="CartaGenerico-img">
+        <img src="{{MEDIA_URL}}/{{ evento.img }}" alt="">
+      </div>
+      <div class="CartaGenerico-text">
+        <h3 class="subTitle">{{evento.nombre}}</h3>
+        <p class="Events-text">
+          {{evento.descripcion}}
+        </p>
+        <div>
+          <h6>Creado: {{ evento.creado }}</h6>
+          <h6>Autor: {{ evento.organizador }}</h6>
+      </div>
+        <a href="/evento/{{ evento.id }}" class="Event-link">
+          Leer Más...
+        </a>
+      </div>
+    </div>
+    {% endfor %}
+  </article>
+</section>
+{% endblock %}

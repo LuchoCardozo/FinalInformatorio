@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+<section>
+<article class="Nosotros">
+    <h1 class="Titulo">Nosotros</h1>
+    <div class="Informacion">
+        <div class="Informacion-img">
+          <img src="{% static '/img/logo.jpg' %}" alt="logo" />
+        </div>
+        <div class="information-text">
+          <h1 class="sub-Titulo">FUNDACIÓN MEMORIAS DE NUESTRO PUEBLO</h1>
+          <p class="MisionAndVision">
+            Desarrollamos actividades culturales y educativas. Propiciamos
+            acciones con el fin de conservar el Patrimonio cultural inmaterial
+            y material como el arquitectónico y todo acervo relativo al
+            patrimonio cultural y natural de Fontana, Chaco.
+          </p>
+        </div>
+      </div>
+</article>
+      <article>
+        <h1 class="Titulo">Equipo a cargo</h1>
+        <div class="Equipo">
+          <div class="Carta">
+            <div class="Carta-img">
+              <img src="{% static '/img/viejito-modified.png' %}" alt="viejo">
+            </div>
+            <h3>Raul canelope</h3>
+          </div>
+          <div class="Carta">
+            <div class="Carta-img">
+              <img src="{% static '/img/viejito-modified.png' %}" alt="viejo">
+
+            </div>
+            <h3>Raul canelope</h3>
+          </div>
+          <div class="Carta">
+            <div class="Carta-img">
+              <img src="{% static '/img/viejito-modified.png' %}" alt="viejo">
+
+            </div>
+            <h3>Raul canelope</h3>
+          </div>
+          <div class="Carta">
+            <div class="Carta-img">
+              <img src="{% static '/img/viejito-modified.png' %}" alt="viejo">
+            </div>
+            <h3>Raul canelope</h3>
+          </div>
+        </div>
+      </div>
+    </article>
+    {% endblock %}

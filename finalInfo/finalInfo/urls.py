@@ -1,30 +1,28 @@
-"""finalInfo URL Configuration
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.0/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
+from django.urls import re_path as url
 from django.contrib import admin
 from django.urls import path
-from apps.noticias_app import views
+from apps.usuarios_app import views as viewsUsers
+from apps.noticias_app import views as viewsNotice
+from apps.eventos_app import views as viewsEvents
 from django.conf.urls.static import static
 from django.conf import settings
-
+from django.contrib.auth.views import LoginView,LogoutView
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index'),
-    path('noticias', views.notices, name='notices'),
-    path('noticias/<int:id>', views.noticeDetail, name='noticeDetail'),
+    path('', viewsNotice.index, name='index'),
+    path('noticias', viewsNotice.notices, name='notices'),
+    path('noticia/<int:id>', viewsNotice.noticeDetail, name='Noticia'),
+    path('nosotros', viewsNotice.nosotros, name='nosotros'),
+    path('contacto', viewsNotice.contacto, name='contacto'),
+    path('eventos', viewsEvents.eventos, name='eventos'),
+    path('evento/<int:id>', viewsEvents.eventDetail, name='eventDetail'),
+    path('registro', viewsUsers.register, name='registro'),
+    path('login', LoginView.as_view(template_name='perfiles/login.html'), name='login'),
+    path('comentarios/<int:id>', viewsNotice.commentAproved, name='comentAproved'),
+    path('logout', LogoutView.as_view(template_name='index.html'), name='logout'),
 
-]+ static (settings.MEDIA_URL, document_root = settings.MEDIA_ROOT, show_indexes = True ) + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT, show_indexes = True ) 
+
+    
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT, show_indexes=True) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT, show_indexes=True)

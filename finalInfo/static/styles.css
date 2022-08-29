@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&display=swap");
+
 * {
   font-family: "Nunito", sans-serif;
   font-size: 19px;
@@ -12,17 +13,6 @@
   transition: all 1s;
 }
 
-/* FOR INDEX */
-
-.home {
-  padding: 0 5rem;
-}
-
-
-article {
-  margin: 4rem 0;
-}
-
 :root {
   --color-darkBlue: #11151C;
   --colors-brown: #c2541e;
@@ -34,7 +24,6 @@ article {
   --form-button-hover: #49708a;
   --colors-gray: #85868a;
 }
-
 header {
   align-items: center;
   display: flex;
@@ -47,7 +36,7 @@ header {
   background-color: var(--colors-green-dark);
 }
 
-.Title {
+.Titulo {
   padding: 1rem 0;
   text-align: center;
   font-size: 30px;
@@ -72,7 +61,6 @@ header {
 }
 
 .nav-link {
-  /* text-transform: lowercase; */
   color: white;
   padding: 0 0.5rem;
 }
@@ -83,84 +71,153 @@ header {
 }
 
 main {
+  min-height:100vh;
   width: 1300px;
-  margin: auto;
-  margin-top: 80px;
+  margin:60px auto 0;
 }
 
-.information {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.staff-grid {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.Card {
-  justify-content: space-around;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  width: 12rem;
-  margin: 0.5rem 1rem;
-  height: auto;
-}
-
-.card-img {
-  width: 100%;
-  height: auto;
-}
-.card-img img {
-  height: auto;
-  width: 100%;
-}
-
-.panel-register,
-.form-contact {
-  margin: auto;
-  padding: 1rem;
-  background-color: var(--form-background);
-  width: 60%;
-  border-radius: 0.2rem;
-}
-
-.panel-register > input,
-.panel-register > button,
-.form-contact > button,
-.form-contact > textarea,
-.form-contact > input {
-  border-radius: 0.2rem;
+.Index{
   display: block;
-  margin: 1rem auto;
-  width: 100%;
-  padding: 0.2rem;
+  text-align: center;
+}
+.LogoFundacion{
+  width: auto;
+  padding: .5rem;
 }
 
-button {
-  background-color: var(--form-button);
+.DescipcionFundacion{
+  padding: 1rem;
+  font-size: 30px;
+}
+
+.Informacion{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Equipo{
+  display: flex;
+  justify-content: space-around;
+}
+
+.Contexto{
+  display: block;
+}
+
+
+.Carta:hover{
+  background-color: #36494E;
   color: white;
+}
+.Carta{
+  box-shadow: 2px 2px 10px 2px #cccccc;
+  padding: .5rem;
+  width: 15rem;
+  height: 15rem;
+  text-align: center;
+}
+
+.Carta-img{
+  height: 90%;
+  width: auto;
+}
+.Carta-img img{
+ width: auto;
+ height: 100%; 
+}
+
+.Comentario{
+  box-shadow: 2px 2px 10px 2px #cccccc;
+  border-radius: .5rem;
+  display: block;
+  padding: .5rem;
+}
+
+.comentario-header{
+  padding: .2rem 0;
+  text-transform: capitalize;
+  display: block;
   font-weight: 700;
 }
 
-button:hover {
-  background-color: var(--form-button-hover);
+.Fecha{
+  font-weight: 100;
 }
-
-.btn {
-  cursor: pointer;
-  background-color: var(--form-background);
-  padding: 0.4rem 1.5rem;
-  color: var(--form-button);
-}
-
-.buttonDonate {
-  justify-content: space-around;
-  width: 100%;
+/* Login and register */
+form{
+  box-shadow: 2px 2px 10px 2px #cccccc;
+  padding: 1rem 2rem;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: var(--form-background);
+  margin: 100px auto;
+  width: 50%;
+  border-radius: .1rem;
+}
+
+form p{
+  padding: .5rem 0 ;
+}
+
+form p textarea{
+  width:100%;
+  height: 5rem;
+}
+
+form p input{
+  border-radius: .1rem;
+  padding: .1rem .5rem;
+  display: flex;
+  width: 100%;
+}
+form button{
+  border-radius: .1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin: 1rem 0;
+  padding: .2rem 0 ;
+  background-color: var(--form-button);
+}
+form button:hover{
+  background-color: var(--form-button-hover);
+  color: white;
+}
+
+.CartaGenerico{
+  display: flex;
+  height: 12rem;
+  width: 90%;
+  border: 1px solid black;
+}
+.CartaGenerico .CartaGenerico-img img{
+  height: 11rem;
+  width: auto;
+}
+
+.CartaGenerico-text{
+  margin-top: 1rem;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.subTitle{
+  text-align: center;
+  font-size: 20px;
+}
+
+.Noticia{
+  padding: 1rem;
+}
+
+.GenericoPlantilla{
+  display: flex;
+}
+
+.GenericoPlantilla-text{
+  padding: 0 1rem;
 }
 
 footer {
@@ -169,55 +226,6 @@ footer {
   padding: 1rem .5rem 1rem;
   background-color: var(--colors-brown-dark);
   margin-top: 3rem;
-}
-.donate {
-  text-align: center;
-}
-
-/* FOR NOTICES AND EVENTS */
-.Notice,
-.events {
-  width: 100%;
-  min-height: 70vh;
-  display: block;
-}
-
-.Card-Events {
-    justify-content: space-around;
-  margin: 1rem;
-  width: 100%;
-  box-shadow: 1px 1px 34px 4px #e1e1e1;
-  display: flex;
-  height: 11rem;
-}
-
-.Card-Events-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 1rem 1rem;
-}
-
-.Card-Events-img img {
-  height: 11rem;
-  width: 17.03rem;
-}
-
-.subTitle{
-    font-size: 23px;
-}
-
-.navblock{
-  display: flex;
-}
-footer p{
-  padding: .5rem;
-  color: white;
-}
-
-.login-panel{
-
-  padding: 4rem 0;
 }
 
 /* FOR NOTICE AND EVENT (PAGE INDIVIDUALS) */

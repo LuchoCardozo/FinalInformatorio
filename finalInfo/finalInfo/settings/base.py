@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ''
+SECRET_KEY = 'django-insecure--+3r!-6&hod$+w3mhpb=-x%(kcja(_=()o31$-h$h9^o^iopt*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -39,8 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.noticias_app'
+    'apps.noticias_app',
+    'apps.eventos_app',
+    'apps.usuarios_app',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -123,6 +126,9 @@ STATICFILES_DIRS = (os.path.join(os.path.dirname(BASE_DIR), 'static')),
 
 MEDIA = '/media/'
 MEDIA_ROOT = (os.path.join(os.path.dirname(BASE_DIR), 'media'))
+
+LOGIN_URL = '/inicia-sesion/'
+LOGIN_REDIRECT_URL = '/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
