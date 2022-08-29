@@ -23,6 +23,7 @@
   --colors-green-dark: #407563;
   --form-button-hover: #49708a;
   --colors-gray: #85868a;
+  --color-violet: #0C0910;
 }
 header {
   align-items: center;
@@ -71,9 +72,9 @@ header {
 }
 
 main {
-  min-height:100vh;
+  min-height:90vh;
   width: 1300px;
-  margin:60px auto 0;
+  margin:80px auto 0;
 }
 
 .Index{
@@ -127,7 +128,13 @@ main {
  height: 100%; 
 }
 
+.Card-Events-img img{
+  width: 25rem;
+  height: 25rem;
+}
+
 .Comentario{
+  margin-top: 1rem;
   box-shadow: 2px 2px 10px 2px #cccccc;
   border-radius: .5rem;
   display: block;
@@ -159,12 +166,6 @@ form{
 form p{
   padding: .5rem 0 ;
 }
-
-form p textarea{
-  width:100%;
-  height: 5rem;
-}
-
 form p input{
   border-radius: .1rem;
   padding: .1rem .5rem;
@@ -185,18 +186,19 @@ form button:hover{
 }
 
 .CartaGenerico{
+  box-shadow: 2px 2px 10px 2px #cccccc;
+  margin: 2rem auto;
   display: flex;
   height: 12rem;
-  width: 90%;
-  border: 1px solid black;
+  width: 99%;
 }
+.CartaGenerico .CartaGenerico-img,
 .CartaGenerico .CartaGenerico-img img{
-  height: 11rem;
+  height: 100%;
   width: auto;
 }
 
 .CartaGenerico-text{
-  margin-top: 1rem;
   padding: 0 1rem;
   display: flex;
   flex-direction: column;
@@ -207,17 +209,33 @@ form button:hover{
   text-align: center;
   font-size: 20px;
 }
-
+.Contact{
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .Noticia{
   padding: 1rem;
 }
 
+.Contact a{
+  margin: 1rem;
+  padding: 1rem;
+  background-color: var(--colors-green-dark);
+}
+.Contact a img{
+  width: 15rem;
+}
 .GenericoPlantilla{
   display: flex;
 }
 
 .GenericoPlantilla-text{
   padding: 0 1rem;
+}
+.telephone,.email{
+  background-color: #11151C;
 }
 
 footer {
@@ -228,6 +246,29 @@ footer {
   margin-top: 3rem;
 }
 
+.Mensajes{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.iconsContact{
+  color: black;
+  text-align: center;
+}
+.iconsContact img{
+  height: 10rem;
+  width: 10rem;
+}
+.MensajesSection{
+  align-items: center;
+}
+.maps{
+  margin: auto;
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+  width: 70%;
+}
 /* FOR NOTICE AND EVENT (PAGE INDIVIDUALS) */
 @media screen and (max-width: 1300px) {
   .information-img img {
@@ -252,9 +293,28 @@ footer {
     width: 1000px;
     margin-top: 80px;
   }
-  .card-img{
-    height: 5rem;
-    width: 5rem;
+  .Equipo{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    align-items: center;
+    font-size: 16px;
+  }
+
+  .Informacion-img{
+    width: 90%;
+  }
+  .Informacion-img img{
+    width: 100%;
+  }
+  
+  .Carta{
+    width: 12rem;
+    height: 12rem;
+  }
+  .Carta-img{
+    height: 9rem;
+    width: 9rem;
     margin: 0 .5rem;
   }
   .information-text,
@@ -305,9 +365,22 @@ footer {
     width: 100%;
     display: block;
   }
+  .Card-Events-img img{
+    width: 15rem;
+    height: 15rem;
+  }
 }
 
 @media screen and (max-width: 768px) {
+  .GenericoPlantilla,  
+  .Informacion{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    align-items: center;
+    font-size: 16px;
+  }
   * {
     font-size: 16px;
   }
@@ -317,6 +390,14 @@ footer {
     width: 100%;
   }
 
+  .DescipcionFundacion{
+    font-size: 19px;
+  }
+
+  .LogoFundacion{
+    width: 90%;
+    height: 80%;
+  }
   .information-text {
     text-align: center;
   }
@@ -327,14 +408,11 @@ footer {
     margin: 1rem auto;
   }
 
-  .donate {
-    width: 100%;
-  }
 
-  .donate img {
-    width: 90%;
-    height: auto;
-  }
+  .iconsContact img{
+    width: 5rem;
+
+}
 
   .form-contact {
     width: 90%;
@@ -360,11 +438,11 @@ footer {
     display: flex;
     flex-wrap: wrap;
   }
-
+  
   .Card-Events-img{
     padding: .5rem 0;
   }
-
+  
   .Card-Events{
     border-radius: .5rem;
     width: auto;
@@ -375,4 +453,10 @@ footer {
   .Events-text{
     display: none;
   }
+  .Card-Events-img img{
+    width: auto;
+    height: 15rem;
+  }
+
+
 }
