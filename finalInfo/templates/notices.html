@@ -6,7 +6,9 @@
 <section>
   <div class="navBarNotices">
     {% for categoria  in categorias  %}
+    <div class="categorias">
     <a href="/categoria/{{categoria.id}}">{{categoria.nombre}}</a>
+    </div>
     {% endfor %}
   </div>
   {% if categori %}
