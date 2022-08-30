@@ -4,7 +4,7 @@ from django.http.response import Http404
 
 
 def eventos(request):
-    lista_evento = Evento.objects.all().order_by('creado')
+    lista_evento = Evento.objects.all().order_by('-id')
     context = {
         "evento": lista_evento,
     }

@@ -24,6 +24,7 @@
   --form-button-hover: #49708a;
   --colors-gray: #85868a;
   --color-violet: #0C0910;
+  --color-headernew: rgb(40, 126, 0);
 }
 header {
   align-items: center;
@@ -34,7 +35,7 @@ header {
   position: fixed;
   height: 80px;
   padding: 0 6%;
-  background-color: var(--colors-green-dark);
+  background-color: var(--color-headernew);
 }
 
 .Titulo {
@@ -190,12 +191,12 @@ form button:hover{
   margin: 2rem auto;
   display: flex;
   height: 12rem;
-  width: 99%;
+  width: 80%;
 }
 .CartaGenerico .CartaGenerico-img,
 .CartaGenerico .CartaGenerico-img img{
-  height: 100%;
-  width: auto;
+  height: 12rem;
+  width: 15rem;
 }
 
 .CartaGenerico-text{
@@ -205,9 +206,21 @@ form button:hover{
   justify-content: space-around;
 }
 
-.subTitle{
+.navBarNotices{
   text-align: center;
-  font-size: 20px;
+  display: block;
+}
+.navBarNotices a{
+  font-weight: 700;
+  color: black;
+  padding: .5rem 1rem;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+}
+
+.subTitle{
+  font-size: 25px;
 }
 .Contact{
   margin-top: 80px;
@@ -228,12 +241,13 @@ form button:hover{
   width: 15rem;
 }
 .GenericoPlantilla{
-  display: flex;
+  width: 100%;
+  overflow-x: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 15px;
 }
 
-.GenericoPlantilla-text{
-  padding: 0 1rem;
-}
 .telephone,.email{
   background-color: #11151C;
 }
@@ -242,14 +256,14 @@ footer {
   bottom: 0;
   color: white;
   padding: 1rem .5rem 1rem;
-  background-color: var(--colors-brown-dark);
+  background-color: var(--colors-green-dark);
   margin-top: 3rem;
 }
 
 .Mensajes{
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 .iconsContact{
   color: black;
@@ -269,6 +283,11 @@ footer {
   display: flex;
   width: 70%;
 }
+
+#correo,#whatsapp{
+  font-size: 89px;
+}
+
 /* FOR NOTICE AND EVENT (PAGE INDIVIDUALS) */
 @media screen and (max-width: 1300px) {
   .information-img img {

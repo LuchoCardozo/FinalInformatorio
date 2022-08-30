@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block contenido %}
+
+<section>
+    <article>
+        <img src="{% static '/img/despedida.png' %}" alt="logo" />
+    </article>
+</section>
+<script type="text/javascript">
+    setTimeout( function() { window.location.href = "/"; }, 2500 );
+ </script>
+
+{% endblock %}

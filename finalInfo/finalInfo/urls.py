@@ -21,7 +21,8 @@ urlpatterns = [
     path('registro', viewsUsers.register, name='registro'),
     path('login', LoginView.as_view(template_name='perfiles/login.html'), name='login'),
     path('comentarios/<int:id>', viewsNotice.commentAproved, name='comentAproved'),
-    path('logout', LogoutView.as_view(template_name='index.html'), name='logout'),
+    path('logout', LogoutView.as_view(template_name='perfiles/logout.html'), name='logout'),
+    path('categoria/<int:id>', viewsNotice.categoriaDetail, name='Noticia'),
 
 
     

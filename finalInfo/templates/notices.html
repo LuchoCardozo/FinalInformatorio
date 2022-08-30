@@ -4,8 +4,18 @@
 
 {% block contenido %}
 <section>
+  <div class="navBarNotices">
+    {% for categoria  in categorias  %}
+    <a href="/categoria/{{categoria.id}}">{{categoria.nombre}}</a>
+    {% endfor %}
+  </div>
+  {% if categori %}
+  <h1 class="Titulo">Noticias: categoria {{categori.nombre}}</h1>
+  {% else %}
   <h1 class="Titulo">Noticias</h1>
-  {% for noticia  in noticias  %}
+  {% endif %}
+
+  {% for noticia  in noticia  %}
   <article class="LayoutGenerico">
     <div class="CartaGenerico">
       <div class="CartaGenerico-img">
@@ -14,7 +24,7 @@
       <div class="CartaGenerico-text">
         <h3 class="subTitle">{{noticia.titulo}}</h3>
         <p class="Events-text">
-          {{noticia.contenido}}
+          {{noticia.contenido|slice:":100"}}
         </p>
         <div>
           <h6>Creado: {{ noticia.creado }}</h6>
@@ -25,6 +35,8 @@
         </a>
       </div>
     </div>
+    {% empty %}
+    <h3 class="Titulo">No hay noticias con esta categoria</h3>
     {% endfor %}
   </article>
 </section>

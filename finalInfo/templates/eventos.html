@@ -15,7 +15,7 @@
       <div class="CartaGenerico-text">
         <h3 class="subTitle">{{evento.nombre}}</h3>
         <p class="Events-text">
-          {{evento.descripcion}}
+          {{evento.descripcion|slice:":100"}}
         </p>
         <div>
           <h6>Creado: {{ evento.creado }}</h6>

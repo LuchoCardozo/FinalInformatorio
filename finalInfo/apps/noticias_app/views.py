@@ -1,7 +1,8 @@
+from unicodedata import category
 from urllib import request
 from django.views.decorators.csrf import csrf_protect
 from django.shortcuts import render, redirect
-from .models import Noticia, Comentario 
+from .models import Noticia, Comentario,Categoria
 from apps.eventos_app.models import Evento
 from django.contrib.auth.models import User
 from django.http.response import Http404
@@ -10,8 +11,9 @@ from django.contrib.auth.decorators import login_required
 
 
 def index(request):
-    lista_noticias = Noticia.objects.all().order_by('creado')[:3]
-    lista_eventos = Evento.objects.all().order_by('creado')[:3]
+    
+    lista_noticias = Noticia.objects.all().order_by('-id')[:3]
+    lista_eventos = Evento.objects.all().order_by('-id')[:3]
     lista_user = User.objects.all()
     context = {
         "noticias": lista_noticias,
@@ -30,9 +32,11 @@ def contacto(request):
 
 
 def notices(request):
-    lista_noticias = Noticia.objects.all().order_by('creado')
+    lista_categorias = Categoria.objects.all()
+    lista_noticias = Noticia.objects.all().order_by('-id')
     context = {
-        "noticia": lista_noticias,
+        "categorias":lista_categorias,
+        "noticia": lista_noticias
     }
     return render(request, 'notices.html', context)
 
@@ -63,6 +67,38 @@ def noticeDetail(request, id):
         "comentarios": lista_comentarios
     }
     return render(request, 'noticeDetail.html', context)
+
+def categoriaDetail(request, id):
+
+    try:
+        lista_categorias = Categoria.objects.all()
+        categoria = Categoria.objects.get(id = id)
+        noticia = Noticia.objects.filter(categorias = id)
+        lista_comentarios = Comentario.objects.filter(aprobado=True)
+    except Noticia.DoesNotExist:
+        raise Http404('La Noticia solicitada no existe')\
+    
+    form = FormComment()
+    
+    if (request.method == "POST") and (request.user.id != None):
+        form = FormComment(request.POST)
+        if form.is_valid():
+            comment = Comentario(
+                autor_id = request.user.id,
+                cuerpo_comentario=form.cleaned_data["cuerpo_comentario"],
+                noticia=noticia
+            )
+            comment.save()
+            return redirect("Noticia")
+
+    context = {
+        "categori":categoria,
+        "categorias":lista_categorias,
+        "form":form,
+        "noticia": noticia,
+        "comentarios": lista_comentarios
+    }
+    return render(request, 'notices.html', context)
 
 
 @login_required
