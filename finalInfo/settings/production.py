@@ -29,5 +29,5 @@ django_heroku.settings(locals())
 STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATICFILES_STORAGE='whitenoise.storage.CompressedStaticFilesStorage'
 
-STATIC_URL = 'https://proyectoblogdjango.herokuapp.com/static/'
-MEDIA_URL = 'https://proyectoblogdjango.herokuapp.com/media/'
+STATIC_URL = 'https://fundacionmemorianuestropueblo.herokuapp.com/static/'
+MEDIA_URL = 'https://fundacionmemorianuestropueblo.herokuapp.com/media/'
