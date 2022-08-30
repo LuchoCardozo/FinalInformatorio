@@ -1,2 +1,6 @@
 finalInfo/settings/local.py
-.../proyect
+finalInfo/settings/base.py
+finalInfo/settings/local.py
+finalInfo/settings/__pycache__
+finalInfo/__pycache__
+/db.sqlite3
