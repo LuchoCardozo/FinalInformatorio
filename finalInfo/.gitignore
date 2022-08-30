@@ -1,6 +1,5 @@
-/finalInfo/settings/local.py
-/finalInfo/settings/base.py
-/finalInfo/settings/__pycache__
-finalInfo/__pycache__
-/db.sqlite3
-
+finalInfo/finalInfo/settings/local.py
+finalInfo/finalInfo/settings/base.py
+finalInfo/finalInfo/settings/__pycache__
+finalInfo/finalInfo/__pycache__
+finalInfo/db.sqlite3
