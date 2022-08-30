@@ -1,5 +1,4 @@
 finalInfo/settings/local.py
-finalInfo/settings/base.py
 finalInfo/settings/__pycache__
 finalInfo/__pycache__
 db.sqlite3
