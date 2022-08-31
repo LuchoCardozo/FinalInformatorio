@@ -53,7 +53,6 @@
   margin-top: 80px;
   overflow: hidden;
   position: relative;
-  width: 100vw;
   display: flex;
   justify-content: center;
 }
@@ -151,6 +150,7 @@ header {
 }
 
 main {
+  overflow-x: hidden;
   min-height:90vh;
   width: 1300px;
   margin:80px auto 0;
@@ -271,6 +271,7 @@ form button:hover{
 }
 
 .CartaGenerico{
+  height: 12rem;
   box-shadow: 2px 2px 10px 2px #cccccc;
   margin: 2rem auto;
   display: flex;
@@ -387,37 +388,9 @@ footer {
   font-size: 89px;
 }
 
-
-@media screen and (max-width: 3000px) {
-
-.CartaGenerico{
-  border-radius: .5rem;
-  width: 100%;
-  flex-direction: row;
+.maps-text{
+  padding: 1rem;
 }
-
-
-.CartaGenerico-img{
-  width: 30%;
-  border-radius: .5rem;
-
-}
-
-.CartaGenerico-text{
-  width: 65%;
-  padding-left: 1rem;
-}
-
-.CartaGenerico-img img{
-  width: 100%;
-  height: 100%;
-  border-radius: .5rem;
-}
-
-}
-
-
-
 
 
 /* FOR NOTICE AND EVENT (PAGE INDIVIDUALS) */
@@ -432,6 +405,7 @@ footer {
   }
 
   main {
+    overflow-x: hidden;
     width: 1200px;
   }
   .logo {
@@ -447,8 +421,14 @@ footer {
   .CartaGenerico-img{
     width: 30%;
     margin: auto;
+    height: 100%;
     border-radius: .5rem;
 
+  }
+  .CartaGenerico-img img{
+    width: auto;
+    height: 100%;
+    border-radius: .5rem;
   }
 
   .CartaGenerico-text{
@@ -463,6 +443,9 @@ footer {
 }
 
 @media screen and (max-width: 1200px) {
+  a i{
+    margin: 0  10px;
+  }
   main {
     width: 1000px;
     margin-top: 80px;
@@ -523,7 +506,19 @@ footer {
 }
 
 @media screen and (max-width: 992px) {
-    
+  .Events-text{
+    display: none;
+  }
+  
+  .maps,
+  .Mensajes{
+    flex-direction: column;
+  }
+  .maps-text,
+  .iconsContact{
+    padding: 1rem;
+  }
+
   header {
     width: 100%;
     height: 60px;
@@ -534,6 +529,9 @@ footer {
     margin-top: 60px;
   }
 
+  form{
+    width: 90%;
+  }
   .form-contact {
     width: 70%;
   }
@@ -566,7 +564,9 @@ footer {
   .nav-link {
     padding: 0.5rem 0;
     width: 100%;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .Card-Events-img img{
     width: 15rem;
@@ -684,9 +684,7 @@ footer {
     flex-direction: column;
   }
 
-  .Events-text{
-    display: none;
-  }
+  
   .CartaGenerico-img{
     width: 100%;
     border-radius: .5rem;
