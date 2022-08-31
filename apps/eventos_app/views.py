@@ -4,9 +4,9 @@ from django.http.response import Http404
 
 
 def eventos(request):
-    lista_evento = Evento.objects.all().order_by('-id')
+    lista_eventos = Evento.objects.all().order_by('-id')
     context = {
-        "evento": lista_evento,
+        "eventos": lista_eventos,
     }
     print()
     return render(request, 'eventos.html', context)

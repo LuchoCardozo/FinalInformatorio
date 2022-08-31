@@ -265,25 +265,32 @@ form button:hover{
   color: white;
 }
 
+.LayoutGenerico{
+  width: 90%;
+  margin: auto;
+}
+
 .CartaGenerico{
   box-shadow: 2px 2px 10px 2px #cccccc;
   margin: 2rem auto;
   display: flex;
-  height: 12rem;
+  flex-direction: column;
   width: 80%;
 }
-.CartaGenerico .CartaGenerico-img,
-.CartaGenerico .CartaGenerico-img img{
-  height: 12rem;
-  width: 15rem;
+
+.CartaGenerico-img img{
+  width: 100%;
 }
 
 .CartaGenerico-text{
-  padding: 0 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
+
+
+
+
 
 .navBarNotices{
   text-align: center;
@@ -380,8 +387,41 @@ footer {
   font-size: 89px;
 }
 
+
+@media screen and (max-width: 3000px) {
+
+.CartaGenerico{
+  border-radius: .5rem;
+  width: 100%;
+  flex-direction: row;
+}
+
+
+.CartaGenerico-img{
+  width: 30%;
+  border-radius: .5rem;
+
+}
+
+.CartaGenerico-text{
+  width: 65%;
+  padding-left: 1rem;
+}
+
+.CartaGenerico-img img{
+  width: 100%;
+  height: 100%;
+  border-radius: .5rem;
+}
+
+}
+
+
+
+
+
 /* FOR NOTICE AND EVENT (PAGE INDIVIDUALS) */
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1500px) {
   .information-img img {
     width: 100%;
     height: auto;
@@ -397,9 +437,32 @@ footer {
   .logo {
     height: 4rem;
   }
+
+  .CartaGenerico{
+    border-radius: .5rem;
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .CartaGenerico-img{
+    width: 30%;
+    margin: auto;
+    border-radius: .5rem;
+
+  }
+
+  .CartaGenerico-text{
+    width: 65%;
+    margin: auto;
+
+  }
+
+  .CartaGenerico-img img{
+    width: 100%;
+  }
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1200px) {
   main {
     width: 1000px;
     margin-top: 80px;
@@ -432,6 +495,30 @@ footer {
   .information-img {
     padding: 0 0.2rem;
     width: 50%;
+  }
+
+
+
+
+  .CartaGenerico{
+    border-radius: .5rem;
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .CartaGenerico-img{
+    width: 40%;
+    border-radius: .5rem;
+  }
+
+  .CartaGenerico-text{
+    width: 55%;
+    margin: auto;
+
+  }
+
+  .CartaGenerico-img img{
+    width: 100%;
   }
 }
 
@@ -485,9 +572,33 @@ footer {
     width: 15rem;
     height: 15rem;
   }
+  .CartaGenerico{
+    border-radius: .5rem;
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .CartaGenerico-img{
+    width: 40%;
+    border-radius: .5rem;
+  }
+
+  .CartaGenerico-text{
+    width: 55%;
+    margin: auto;
+ 
+  }
+
+  .CartaGenerico-img img{
+    width: 100%;
+    border-radius: .5rem;
+  }
 }
 
-@media screen and (max-width: 768px) {
+
+
+
+@media screen and (max-width: 500px) {
   .GenericoPlantilla,  
   .Informacion{
     display: flex;
@@ -567,20 +678,31 @@ footer {
     padding: .5rem 0;
   }
   
-  .Card-Events{
+  .CartaGenerico{
     border-radius: .5rem;
-    width: auto;
-    height: 100%;
+    width: 90vw;
     flex-direction: column;
   }
 
   .Events-text{
     display: none;
   }
-  .Card-Events-img img{
-    width: auto;
-    height: 15rem;
+  .CartaGenerico-img{
+    width: 100%;
+    border-radius: .5rem;
+
   }
 
+  .CartaGenerico-text{
+    width: 95%;
+    margin: auto;
+    padding: .2rem;
+
+  }
+
+  .CartaGenerico-img img{
+    width: 100%;
+    border-radius: .5rem;
+  }
 
 }

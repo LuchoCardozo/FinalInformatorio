@@ -36,7 +36,7 @@ def notices(request):
     lista_noticias = Noticia.objects.all().order_by('-id')
     context = {
         "categorias":lista_categorias,
-        "noticia": lista_noticias
+        "noticias": lista_noticias
     }
     return render(request, 'notices.html', context)
 
@@ -73,7 +73,7 @@ def categoriaDetail(request, id):
     try:
         lista_categorias = Categoria.objects.all()
         categoria = Categoria.objects.get(id = id)
-        noticia = Noticia.objects.filter(categorias = id)
+        noticias = Noticia.objects.filter(categorias = id)
         lista_comentarios = Comentario.objects.filter(aprobado=True)
     except Noticia.DoesNotExist:
         raise Http404('La Noticia solicitada no existe')\
@@ -95,7 +95,7 @@ def categoriaDetail(request, id):
         "categori":categoria,
         "categorias":lista_categorias,
         "form":form,
-        "noticia": noticia,
+        "noticias": noticias,
         "comentarios": lista_comentarios
     }
     return render(request, 'notices.html', context)
