@@ -6,7 +6,6 @@
 <section>
   <article class="Noticia">
     <h1 class="Titulo">{{ noticia.titulo }}</h1>
-    <div class="Contexto">
       <div class="GenericoPlantilla">
         <div class="GenericoPlantilla-img">
           <div class="Card-Events-img">
@@ -14,13 +13,12 @@
           </div>
           <div>
             <h6>Creado: {{ noticia.creado }}</h6>
-            <h6>Autor: {{ noticia.autor_id }}</h6>
+            <h6>Autor: {{ noticia.autor }}</h6>
           </div>
         </div>
         <div class="GenericoPlantilla-text">
           <p> {{noticia.contenido}}</p>
         </div>
-      </div>
     </div>
   </article>
   <article class="Comentarios">

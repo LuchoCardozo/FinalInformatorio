@@ -13,6 +13,8 @@
   transition: all 1s;
 }
 
+
+
 :root {
   --color-darkBlue: #11151C;
   --colors-brown: #c2541e;
@@ -150,7 +152,6 @@ header {
 }
 
 main {
-  overflow-x: hidden;
   min-height:90vh;
   width: 1300px;
   margin:80px auto 0;
@@ -208,12 +209,20 @@ main {
  height: 100%; 
 }
 
+.Card-Events-img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .Card-Events-img img{
+  border-radius: .5rem;
   width: 25rem;
   height: 25rem;
 }
 
 .Comentario{
+  margin: auto;
+  width: 80vw;
   margin-top: 1rem;
   box-shadow: 2px 2px 10px 2px #cccccc;
   border-radius: .5rem;
@@ -247,6 +256,12 @@ form p{
   padding: .5rem 0 ;
 }
 form p input{
+  border-radius: .1rem;
+  padding: .1rem .5rem;
+  display: flex;
+  width: 100%;
+}
+form p textarea{
   border-radius: .1rem;
   padding: .1rem .5rem;
   display: flex;
@@ -297,7 +312,6 @@ form button:hover{
   text-align: center;
   display: flex;
   justify-content: center;
-  margin-top: -60px;
 }
 .navBarNotices a{
   font-weight: 700;
@@ -341,12 +355,13 @@ form button:hover{
   width: 15rem;
 }
 .GenericoPlantilla{
-  width: 100%;
-  overflow-x: hidden;
+  width: 80vw;
+  margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 15px;
 }
+
 
 .telephone,.email{
   background-color: #11151C;
@@ -405,7 +420,6 @@ footer {
   }
 
   main {
-    overflow-x: hidden;
     width: 1200px;
   }
   .logo {
@@ -423,7 +437,6 @@ footer {
     margin: auto;
     height: 100%;
     border-radius: .5rem;
-
   }
   .CartaGenerico-img img{
     width: auto;
@@ -438,11 +451,20 @@ footer {
   }
 
   .CartaGenerico-img img{
-    width: 100%;
+    width: 90%;
   }
 }
 
 @media screen and (max-width: 1200px) {
+
+  .Despedida{
+    width: 100vw;
+  }
+  .Despedida img{ 
+    width: 100%;
+    height: auto;
+  }
+
   a i{
     margin: 0  10px;
   }
@@ -480,7 +502,10 @@ footer {
     width: 50%;
   }
 
-
+  .GenericoPlantilla-text{
+    line-height: 1.5rem;
+    text-align: justify;
+  }
 
 
   .CartaGenerico{
@@ -500,6 +525,12 @@ footer {
 
   }
 
+  .Card-Events-img img{
+    border-radius: .5rem;
+    width: 20rem;
+    height: 20rem;
+  }
+
   .CartaGenerico-img img{
     width: 100%;
   }
@@ -508,6 +539,11 @@ footer {
 @media screen and (max-width: 992px) {
   .Events-text{
     display: none;
+  }
+
+  .GenericoPlantilla{
+    display: flex;
+    flex-direction: column;
   }
   
   .maps,
@@ -568,9 +604,10 @@ footer {
     align-items: center;
     justify-content: center;
   }
+
   .Card-Events-img img{
-    width: 15rem;
-    height: 15rem;
+    width: 10rem;
+    height: 10rem;
   }
   .CartaGenerico{
     border-radius: .5rem;
@@ -621,7 +658,9 @@ footer {
     font-size: 19px;
   }
 
+
   .LogoFundacion{
+    margin: auto;
     width: 80%;
     height: 80%;
   }
@@ -664,7 +703,6 @@ footer {
   }
 
   main {
-    overflow-x: hidden;
     width: 100%;
   }
   .grid{
@@ -679,26 +717,33 @@ footer {
   }
   
   .CartaGenerico{
+    height: 30rem;
+    margin: 1rem 0;
+    display: flex;
     border-radius: .5rem;
     width: 90vw;
     flex-direction: column;
   }
 
+  .subTitle{
+    font-size: 18px;
+  }
   
   .CartaGenerico-img{
+    height: auto;
     width: 100%;
     border-radius: .5rem;
-
   }
 
   .CartaGenerico-text{
     width: 95%;
     margin: auto;
     padding: .2rem;
-
   }
 
+
   .CartaGenerico-img img{
+    height: auto;
     width: 100%;
     border-radius: .5rem;
   }

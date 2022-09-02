@@ -86,7 +86,7 @@ def categoriaDetail(request, id):
             comment = Comentario(
                 autor_id = request.user.id,
                 cuerpo_comentario=form.cleaned_data["cuerpo_comentario"],
-                noticia=noticia
+                noticia=noticias
             )
             comment.save()
             return redirect("Noticia")

@@ -22,5 +22,5 @@ urlpatterns = [
     path('login', LoginView.as_view(template_name='perfiles/login.html'), name='login'),
     path('comentarios/<int:id>', viewsNotice.commentAproved, name='comentAproved'),
     path('logout', LogoutView.as_view(template_name='perfiles/logout.html'), name='logout'),
-    path('categoria/<int:id>', viewsNotice.categoriaDetail, name='Noticia'),
+    path('categoria/<int:id>', viewsNotice.categoriaDetail, name='Categoria'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT, show_indexes=True) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT, show_indexes=True)
