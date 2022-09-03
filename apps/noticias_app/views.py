@@ -108,5 +108,5 @@ def commentAproved(request, id):
     except Comentario.DoesNotExist:
         raise Http404("Inexistente")
 
-    comentario.aprpove()
+    comentario.approve()
     return redirect("Noticia", id=comentario.noticia.id)
